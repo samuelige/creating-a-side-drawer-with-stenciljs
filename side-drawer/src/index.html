@@ -24,9 +24,17 @@
           color: #ad2b2b;
       }
 
+      /* #side-drawer-btn {
+        z-index: 100;
+        background: #ad2b2b;
+        color: #ffffff;
+        position: absolute;
+      } */
+
     </style>
   </head>
   <body>
+    <button id="side-drawer-btn">Open Menu</button>
     <side-drawer title="Main Header">
       <nav>
         <ul>
@@ -37,5 +45,16 @@
         </ul>
       </nav>
     </side-drawer>
+
+    <script>
+      const sideDrawerButton = document.querySelector('#side-drawer-btn');
+      const sideDrawer = document.querySelector('side-drawer');
+      sideDrawerButton.addEventListener('click', () => {
+        if (!sideDrawer.open) {
+          console.log('Opening side menu...')
+          sideDrawer.open = true;
+        }
+      })
+    </script>
   </body>
 </html>
