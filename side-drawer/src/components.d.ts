@@ -6,20 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface SideDrawer {
+        "title": string;
+    }
 }
 declare global {
+    interface HTMLSideDrawerElement extends Components.SideDrawer, HTMLStencilElement {
+    }
+    var HTMLSideDrawerElement: {
+        prototype: HTMLSideDrawerElement;
+        new (): HTMLSideDrawerElement;
+    };
     interface HTMLElementTagNameMap {
+        "side-drawer": HTMLSideDrawerElement;
     }
 }
 declare namespace LocalJSX {
+    interface SideDrawer {
+        "title"?: string;
+    }
     interface IntrinsicElements {
+        "side-drawer": SideDrawer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "side-drawer": LocalJSX.SideDrawer & JSXBase.HTMLAttributes<HTMLSideDrawerElement>;
         }
     }
 }
