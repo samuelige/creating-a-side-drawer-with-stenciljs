@@ -7,15 +7,33 @@
 
     <script type="module" src="/build/side-drawer.esm.js"></script>
     <script nomodule src="/build/side-drawer.js"></script>
+    
+
+    <style>
+      nav > ul  {
+          list-style: none;
+          text-decoration: none;
+      }
+
+      nav > ul > li {
+        padding: .4rem;
+      }
+
+      nav > ul > li > a  {
+          text-decoration: none;
+          color: #ad2b2b;
+      }
+
+    </style>
   </head>
   <body>
     <side-drawer title="Main Header">
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Service</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Service</a></li>
+          <li><a href="/">About Us</a></li>
+          <li><a href="/">Contact Us</a></li>
         </ul>
       </nav>
     </side-drawer>
